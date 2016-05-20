@@ -1,2 +1,6 @@
 .idea
 node_modules
+garbage/*
+archive/*
+albums/*
+incoming_songs/*
