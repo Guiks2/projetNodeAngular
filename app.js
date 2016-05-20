@@ -5,7 +5,7 @@ var path = require('path');
 var cons = require('consolidate');
 var routes = require('./routes/index');
 var datas = require('./routes/data');
-
+var conn = require('./connection.js');
 var app = express();
 
 // view engine setup
@@ -27,16 +27,4 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-var mysql = require("mysql");
-var connection = mysql.createConnection({
-    host : "localhost",
-    user : 'root',
-    password : '',
-    database : 'projetnodeangular'
-});
-
-connection.connect();
-console.log("Serveur started on 8000");
 app.listen(8000);
-
-module.exports = app;
