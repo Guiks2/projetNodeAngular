@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular JS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="/javascript/angular.js"></script>
+    <script src="/javascript/app.js"></script>
+</head>
+    <body class="grey darken-4" ng-app="EsgiMp3">
+    <div class="row full-window-height valign-wrapper">
+
+        <div class="col s12 m12 l10 offset-l1">
+            <h1 class="white-text row strong">MP3 ORGANIZER</h1>
+
+            <div class="mainContainer row card white">
+                <div class="row">
+                    <div class="col s12 m12 l8">
+                        <div id="test1" ng-controller="Mp3LibraryController" class="col s12">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Fichier</th>
+                                    <th>Titre</th>
+                                    <th>Artiste</th>
+                                    <th>Durée</th>
+                                    <th>Album</th>
+                                    <th>Année</th>
+                                    <th>Genre</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="song in songs">
+                                        <td ng-bind="song.file_name"></td>
+                                        <td ng-bind="song.title"></td>
+                                        <td ng-bind="song.singer"></td>
+                                        <td ng-bind="song.duration"></td>
+                                        <td ng-bind="song.album"></td>
+                                        <td><span ng-bind="song.year | date : 'yyyy'"></span></td>
+                                        <td ng-bind="song.genre"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+</html>
